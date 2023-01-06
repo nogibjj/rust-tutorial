@@ -1,6 +1,2 @@
-# rust-new-project-template
-A good starting point for a new Rust project
-
-## References
-
-* [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+# A Brief Rust Tutorial
+A brief tutorial for an O'Reilly tutorial.
