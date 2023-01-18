@@ -3,6 +3,7 @@
 ## Graduate Cloud Computing for Data w/ Rust first approach
 
 * Heuristic:  Rust if you can, Python if you must
+* Refer to this guide when needed:  https://paiml.com/docs/home/books/cloud-computing-for-data/chapter01-getting-started/
 
 ### Key Goals in Semester
 
@@ -43,5 +44,9 @@ Each "big" project should have a dedicted repo for it, a good example is the fol
 * 3:30-4:45 - Teach
 * 4:45-5:00 - Break
 * 5:00-6:00 - Teach
+
+
+#### Projects
+
 
 
