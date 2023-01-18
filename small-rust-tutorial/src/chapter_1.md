@@ -84,3 +84,10 @@ For advanced students feel free to substitute one of the projects for these doma
 * Build an MLOps platform in Rust that could be a commercial solution (just prototype)
 
 * Build a Rust Game that uses MLOps and runs in the cloud
+
+### Onboarding Day 1
+
+* GitHub Codespaces with Copilot
+* AWS Learner Labs
+* Azure Free Credits
+* More TBD (AWS Credits, etc)
