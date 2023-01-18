@@ -24,6 +24,7 @@ release:
 
 deploy:
 	@echo "====> deploying to github"
+	git worktree remove --force /tmp/book
 	git worktree add /tmp/book gh-pages
 	mdbook build small-rust-tutorial
 	rm -rf /tmp/book/*
@@ -32,6 +33,7 @@ deploy:
 		git add -A && \
 		git commit -m "deployed on $(shell date) by ${USER}" && \
 		git push origin gh-pages
-		git update-ref -d refs/heads/gh-pages
+	git update-ref -d refs/heads/gh-pages
+	git push --force
 
 all: format lint test run
