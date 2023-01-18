@@ -3,7 +3,13 @@
 ## Graduate Cloud Computing for Data w/ Rust first approach
 
 * Heuristic:  Rust if you can, Python if you must
-* Refer to this guide when needed:  https://paiml.com/docs/home/books/cloud-computing-for-data/chapter01-getting-started/
+* Refer to these resources when needed:  
+    * Online Book: https://paiml.com/docs/home/books/cloud-computing-for-data/chapter01-getting-started/
+    * Syllabus:  https://noahgift.github.io/cloud-data-analysis-at-scale/syllabus
+    * Project:  https://noahgift.github.io/cloud-data-analysis-at-scale/projects
+    * New Rust Guide: https://nogibjj.github.io/rust-tutorial/
+    * GitHub Template Rust New Projects: https://github.com/noahgift/rust-new-project-template
+    * Rust MLOps Template: https://github.com/nogibjj/rust-mlops-template
 
 ### Key Goals in Semester
 
@@ -45,8 +51,34 @@ Each "big" project should have a dedicted repo for it, a good example is the fol
 * 4:45-5:00 - Break
 * 5:00-6:00 - Teach
 
-
 #### Projects
 
+##### Team Final Project (Team Size: 3-4): Rust MLOps Microservice
 
+* Build an end-to-end MLOps solution the invokes a model in a cloud platform using only Rust techology (i.e. Pure Rust Code).  Examples could include PyTorch model, or Hugging Face model, or any model packaged with a Microservice. (see guide above about specs)
 
+##### Individual Project #1: Rust CLI
+
+* Build a useful command-line tool in the domain of data engineering or machine learning engineering.  (see guide above about specs)
+
+##### Individual Project #2: Kubernetes (or similar) Microservice in Rust
+
+* Build a useful web microservice in the domain of data engineering or machine learning engineering. (see guide above about specs)
+
+##### Individual Project #3: Interact with Big Data in Rust
+
+* Build a useful web microservice or CLI in the domain of data engineering or machine learning engineering that uses a large data platform. (see guide above about specs)
+
+##### Individual Project #4: Serverless Data Engineering Pipeline with Rust
+
+* Build a useful serverless application in Rust. (see guide above about specs) Also see: https://noahgift.github.io/cloud-data-analysis-at-scale/projects#project-4. 
+
+##### Optional Advanced Individual Projects 
+
+For advanced students feel free to substitute one of the projects for these domains:
+
+* Web Assembly Rust:  Follow above guidelines, but additionally port your deploy target to Rust Web Assembly.  For example Hugging Face in the browser.
+
+* Build an MLOps platform in Rust that could be a commercial solution (just prototype)
+
+* Build a Rust Game that uses MLOps and runs in the cloud
