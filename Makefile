@@ -22,4 +22,16 @@ run:
 release:
 	cargo build --release
 
+deploy:
+	@echo "====> deploying to github"
+	git worktree add /tmp/book gh-pages
+	mdbook build small-rust-tutorial
+	rm -rf /tmp/book/*
+	cp -rp small-rust-tutorial/book/* /tmp/book/
+	cd /tmp/book && \
+		git add -A && \
+		git commit -m "deployed on $(shell date) by ${USER}" && \
+		git push origin gh-pages
+		git update-ref -d refs/heads/gh-pages
+
 all: format lint test run

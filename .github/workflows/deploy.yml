@@ -16,8 +16,5 @@ jobs:
         with:
           toolchain: stable
       - run: (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.4" mdbook)
-      - run: pwd; #cd /workspaces/rust-tutorial && mdbook build ./small-rust-tutorial
-      - uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: book # The folder the action should deploy.
+      - run: make deploy
+
