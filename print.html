@@ -229,6 +229,51 @@
 <p>Build a Rust Game that uses MLOps and runs in the cloud</p>
 </li>
 </ul>
+<h3 id="onboarding-day-1"><a class="header" href="#onboarding-day-1">Onboarding Day 1</a></h3>
+<ul>
+<li>GitHub Codespaces with Copilot</li>
+<li>AWS Learner Labs</li>
+<li>Azure Free Credits</li>
+<li>More TBD (AWS Credits, etc)</li>
+</ul>
+<h3 id="getting-started-with-github-codespaces-for-rust"><a class="header" href="#getting-started-with-github-codespaces-for-rust">Getting Started with GitHub Codespaces for Rust</a></h3>
+<h4 id="rust-new-project-template"><a class="header" href="#rust-new-project-template">rust-new-project-template</a></h4>
+<p>All Rust projects can follow this pattern:</p>
+<ol>
+<li>Create a new repo using Rust New Project Template:  https://github.com/noahgift/rust-new-project-template</li>
+<li>Create a new Codespaces and use it</li>
+<li>Use <code>main.rs</code> to call handle CLI and use <code>lib.rs</code> to handle logic and import <code>clap</code> in <code>Cargo.toml</code> as shown in this project.</li>
+<li>Use `cargo init --name 'hello' or whatever you want to call your project.</li>
+<li>Put your &quot;ideas&quot; in as comments in rust to seed GitHub Copilot, i.e //build add function</li>
+<li>Run <code>make format</code> i.e. <code>cargo format</code></li>
+<li>Run <code>make lint</code> i.e. <code>cargo clippy --quiet</code></li>
+<li>Run project:  <code>cargo run -- --help</code></li>
+<li>Push your changes to allow GitHub Actions to: <code>format</code> check, <code>lint</code> check, and other actions like binary deploy.</li>
+</ol>
+<p>This pattern is a new emerging pattern and is ideal for systems programming in Rust.</p>
+<p><img src="https://user-images.githubusercontent.com/58792/213335664-f459e6ac-018a-4ccf-9563-bbe6d49d72d1.png" alt="1 1-prompt-engineering" /></p>
+<p>Repo example here: <a href="https://github.com/nogibjj/hello-rust">https://github.com/nogibjj/hello-rust</a></p>
+<h4 id="reproduce"><a class="header" href="#reproduce">Reproduce</a></h4>
+<p>A good starting point for a new Rust project</p>
+<p>To run: <code>cargo run -- marco --name &quot;Marco&quot;</code>
+Be careful to use the NAME of the project in the <code>Cargo.toml</code> to call <code>lib.rs</code> as in:</p>
+<pre><code>[package]
+name = &quot;hello&quot;
+</code></pre>
+<p>For example, see the name <code>hello</code> is invoked alongside <code>marco_polo</code> which is in <code>lib.rs</code>.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let args = Cli::parse();
+    match args.command {
+        Some(Commands::Marco { name }) =&gt; {
+            println!(&quot;{}&quot;, hello::marco_polo(&amp;name));
+        }
+        None =&gt; println!(&quot;No command was used&quot;),
+    }
+}</code></pre></pre>
+<h5 id="references"><a class="header" href="#references">References</a></h5>
+<ul>
+<li><a href="https://github.com/kbknapp/rust-cli-template">rust-cli-template</a></li>
+</ul>
 
                     </main>
 
