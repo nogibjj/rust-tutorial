@@ -1,5 +1,6 @@
 # Chapter 1-Week 1
 
+*(btw, yes, I made this image using Rust)*
 ![sd_final (1)](https://user-images.githubusercontent.com/58792/213264730-91ea442f-ec3d-4af2-9975-500c0d9ac7d0.png)
 
 ## Demo Video of building a Command-Line Tool in Rust
@@ -13,12 +14,13 @@
 * Heuristic:  Rust if you can, Python if you must
 * Refer to these resources when needed:  
     * [Online Book Cloud Computing for Data](https://paiml.com/docs/home/books/cloud-computing-for-data/)
+    * [Developing on AWS with C#](https://d1.awsstatic.com/developer-center/Developing-on-AWS-with-CSharp.pdf)
     * [Syllabus](https://noahgift.github.io/cloud-data-analysis-at-scale/syllabus)
     * [Project](https://noahgift.github.io/cloud-data-analysis-at-scale/projects)
     * [New Rust Guide](https://nogibjj.github.io/rust-tutorial/)
     * [GitHub Template Rust New Projects](https://github.com/noahgift/rust-new-project-template)
     * [Rust MLOps Template](https://github.com/nogibjj/rust-mlops-template)
-    * [Building Cloud Computing Solutions at Scale Specialization](https://www.coursera.org/specializations/building-cloud-computing-solutions-at-scale) 
+    * [Building Cloud Computing Solutions at Scale Specialization](https://www.coursera.org/specializations/building-cloud-computing-solutions-at-scale) **You should refer to this guide often and this Rust tutorial supplements it**
 
 ### Key Goals in Semester
 
@@ -169,8 +171,11 @@ fn main() {
 ```
 
 
-##### References
+##### Other References
 
+* [Cargo Book](https://doc.rust-lang.org/cargo/)
+* [The Rust Programming Language Official Tutorial](https://doc.rust-lang.org/book/)
+* [Comprehensive Rust Google Tutorial](https://google.github.io/comprehensive-rust/)
 * [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+* [Command-Line Rust](https://www.oreilly.com/library/view/command-line-rust/9781098109424/)
 
-test
