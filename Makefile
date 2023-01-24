@@ -23,8 +23,12 @@ release:
 	cargo build --release
 
 deploy:
+	#install mdbook if not installed
+	if [ ! -x "$(command -v mdbook)" ]; then cargo install mdbook; fi
 	@echo "====> deploying to github"
-	git worktree remove --force /tmp/book
+	# if worktree exists, remove it: git worktree remove --force /tmp/book
+	# otherwise add it: git worktree add /tmp/book gh-pages
+	if [ -d /tmp/book ]; then git worktree remove --force /tmp/book; fi
 	git worktree add /tmp/book gh-pages
 	mdbook build small-rust-tutorial
 	rm -rf /tmp/book/*
