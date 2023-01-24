@@ -24,7 +24,8 @@ release:
 
 deploy:
 	#if git is not configured, configure it
-	if [ -z "$(git config --global user.email)" ]; then git config --global user.email "noah.gift@gmail.com" && git config --global user.name "Noah Gift"; fi
+	if [ -z "$(git config --global user.email)" ]; then git config --global user.email "noah.gift@gmail.com" &&\
+		 git config --global user.name "Noah Gift"; fi
 
 	#install mdbook if not installed
 	if [ ! -x "$(command -v mdbook)" ]; then cargo install mdbook; fi
