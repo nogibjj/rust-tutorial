@@ -32,7 +32,7 @@ deploy:
 	# if worktree exists, remove it: git worktree remove --force /tmp/book
 	# otherwise add it: git worktree add /tmp/book gh-pages
 	if [ -d /tmp/book ]; then git worktree remove --force /tmp/book; fi
-	git worktree add /tmp/book gh-pages
+	git worktree add -f /tmp/book gh-pages
 	mdbook build small-rust-tutorial
 	rm -rf /tmp/book/*
 	cp -rp small-rust-tutorial/book/* /tmp/book/
