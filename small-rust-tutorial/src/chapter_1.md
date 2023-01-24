@@ -2,6 +2,12 @@
 
 ![sd_final (1)](https://user-images.githubusercontent.com/58792/213264730-91ea442f-ec3d-4af2-9975-500c0d9ac7d0.png)
 
+## Demo Video of building a Command-Line Tool in Rust
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wl77SW57odA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+* [Link to: Assimilate-Python-For-Rust live demo](https://www.youtube.com/watch?v=wl77SW57odA&t=972s)
+
 ## Graduate Cloud Computing for Data w/ Rust first approach
 
 * Heuristic:  Rust if you can, Python if you must
