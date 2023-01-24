@@ -1,15 +1,14 @@
 # Preface
 
-This book is written live while teaching [Cloud Computing for Data](https://datascience.duke.edu/academics/electives/#721) at Duke University in 2023 by [Noah Gift](https://noahgift.com/).What currently keeps me busy is working as an [Executive in Residence at the Duke MIDS (Data Science)](https://www.coursera.org/instructor/noahgift) and Duke AI Product Management program and as a consultant and author in Cloud Computing, Big Data, DevOps, and MLOps. The following visual resume is a good idea to show the kinds of things I have worked on in my life.  I am a Rust Fanatic.
+This book is for [Cloud Computing for Data](https://datascience.duke.edu/academics/electives/#721) at Duke University in 2023 by [Noah Gift](https://noahgift.com/). What currently keeps me busy is working as an [Executive in Residence at the Duke MIDS (Data Science)](https://www.coursera.org/instructor/noahgift) and Duke AI Product Management program and as a consultant and author in Cloud Computing, Big Data, DevOps, and MLOps. The following visual resume is a good idea to show what I have worked on in my career. I am a Rust Fanatic.
 
 ![visual](https://noahgift.com/img/noah_gift_visual_resume.jpg)
-
 
 ### Related Duke Coursera Content
 
 * You can find many related Coursera Courses at [https://www.coursera.org/instructor/noahgift](https://www.coursera.org/instructor/noahgift)
 
-🔭 I’m currently working on or just finished the following things below:
+🔭 I'm currently working on or just finished the following things below:
 
 ##### MLOps (Specialization:  4 Courses)
 ###### Publisher:  Coursera + Duke
@@ -23,7 +22,7 @@ This book is written live while teaching [Cloud Computing for Data](https://data
 ###### Release Date:  2/1/2022
 ![de-course](https://user-images.githubusercontent.com/58792/160180842-9d84b5e0-3196-4b92-b6fc-947c491c47af.png)
 
-* [Python, Bash and SQL Essentials for Data Engineering Specialization](https://www.coursera.org/specializations/python-bash-sql-data-engineering-duke)
+* [Python, Bash, and SQL Essentials for Data Engineering Specialization](https://www.coursera.org/specializations/python-bash-sql-data-engineering-duke)
 * [Course1: Python and Pandas for Data Engineering](https://www.coursera.org/learn/python-and-pandas-for-data-engineering-duke?specialization=python-bash-sql-data-engineering-duke)
 * [Course2: Linux and Bash for Data Engineering](https://www.coursera.org/learn/linux-and-bash-for-data-engineering-duke?specialization=python-bash-sql-data-engineering-duke)
     * [Github Repos for Projects in Course](https://github.com/noahgift/cloud-data-analysis-at-scale#github-repos-for-projects-in-course)   
@@ -40,7 +39,7 @@ This book is written live while teaching [Cloud Computing for Data](https://data
 
 
 ##### AWS w/ C#
-###### Publisher:  O'Reilly
+###### Publisher: O'Reilly
 
 ###### Release Date:  2022 (Reinvent 2022 Target)
 
@@ -50,7 +49,7 @@ Working with O'Reilly and AWS to write a book on building solutions on AWS with 
 
 
 ##### Practical MLOps
-###### Publisher:  O'Reilly
+###### Publisher: O'Reilly
 
 ###### Release Date:  2021
 
@@ -89,4 +88,4 @@ Launch Your Career in Cloud Computing. Master strategies and tools to become pro
 * Pragmatic AI Labs: [https://paiml.com](https://paiml.com)
 * [Subscribe to the Pragmatic AI Labs YouTube Channel (New Content Weekly)](https://www.youtube.com/channel/UCNDfiL0D1LUeKWAkRE1xO5Q)  
 
-⚡ Fun facts: I was as a bouncer in college with former UFC Champion Chuck Liddell.  Early in my career I worked on the [movie Avatar while living in New Zealand](https://www.imdb.com/name/nm2104112/?ref_=fn_al_nm_1).  I used to play basketball with Adam Sandler at lunch when I worked at Sony Imageworks in Los Angeles, CA.
+⚡ Fun facts: I was a bouncer in college with former UFC Champion Chuck Liddell. Early in my career, I worked on the [movie Avatar while living in New Zealand](https://www.imdb.com/name/nm2104112/?ref_=fn_al_nm_1). I used to play basketball with Adam Sandler at lunch when I worked at Sony Imageworks in Los Angeles, CA.
