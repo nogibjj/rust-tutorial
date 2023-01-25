@@ -535,6 +535,146 @@ cargo lambda invoke --remote \
 <ul>
 <li><a href="https://github.com/nogibjj/rust-mlops-template/tree/main/awsmetas3">Source code for AWS S3 Summarizer</a></li>
 </ul>
+<p><code>lib.rs</code> [direct link]</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//Information about the AWS S3 service
+use aws_config::meta::region::RegionProviderChain;
+use aws_sdk_s3::{Client, Error};
+
+// Create a new AWS S3 client
+pub async fn client() -&gt; Result&lt;Client, Error&gt; {
+    let region_provider = RegionProviderChain::first_try(None)
+        .or_default_provider()
+        .or_else(&quot;us-east-1&quot;);
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&amp;shared_config);
+    Ok(client)
+}
+
+/* return a list of all buckets in an AWS S3 account
+*/
+
+pub async fn list_buckets(client: &amp;Client) -&gt; Result&lt;Vec&lt;String&gt;, Error&gt; {
+    //create vector to store bucket names
+    let mut bucket_names: Vec&lt;String&gt; = Vec::new();
+    let resp = client.list_buckets().send().await?;
+    let buckets = resp.buckets().unwrap_or_default();
+    //store bucket names in vector
+    for bucket in buckets {
+        bucket_names.push(bucket.name().unwrap().to_string());
+    }
+    Ok(bucket_names)
+}
+
+// Get the size of an AWS S3 bucket by summing all the objects in the bucket
+// return the size in bytes
+async fn bucket_size(client: &amp;Client, bucket: &amp;str) -&gt; Result&lt;i64, Error&gt; {
+    let resp = client.list_objects_v2().bucket(bucket).send().await?;
+    let contents = resp.contents().unwrap_or_default();
+    //store in a vector
+    let mut sizes: Vec&lt;i64&gt; = Vec::new();
+    for object in contents {
+        sizes.push(object.size());
+    }
+    let total_size: i64 = sizes.iter().sum();
+    println!(&quot;Total size of bucket {} is {} bytes&quot;, bucket, total_size);
+    Ok(total_size)
+}
+
+/* Use list_buckets to get a list of all buckets in an AWS S3 account
+return a vector of all bucket sizes.
+If there is an error continue to the next bucket only print if verbose is true
+Return the vector
+*/
+pub async fn list_bucket_sizes(client: &amp;Client, verbose: Option&lt;bool&gt;) -&gt; Result&lt;Vec&lt;i64&gt;, Error&gt; {
+    let verbose = verbose.unwrap_or(false);
+    let buckets = list_buckets(client).await.unwrap();
+    let mut bucket_sizes: Vec&lt;i64&gt; = Vec::new();
+    for bucket in buckets {
+        match bucket_size(client, &amp;bucket).await {
+            Ok(size) =&gt; bucket_sizes.push(size),
+            Err(e) =&gt; {
+                if verbose {
+                    println!(&quot;Error: {}&quot;, e);
+                }
+            }
+        }
+    }
+    Ok(bucket_sizes)
+}
+<span class="boring">}</span></code></pre></pre>
+<p><code>main.rs</code> [direct link]</p>
+<pre><pre class="playground"><code class="language-rust">(/*A Command-line tool to Interrogate AWS S3.
+Determines information about AWS S3 buckets and objects.
+*/
+use clap::Parser;
+use humansize::{format_size, DECIMAL};
+
+#[derive(Parser)]
+//add extended help
+#[clap(
+    version = &quot;1.0&quot;,
+    author = &quot;Noah Gift&quot;,
+    about = &quot;Finds out information about AWS S3&quot;,
+    after_help = &quot;Example: awsmetas3 account-size&quot;
+)]
+struct Cli {
+    #[clap(subcommand)]
+    command: Option&lt;Commands&gt;,
+}
+
+#[derive(Parser)]
+enum Commands {
+    Buckets {},
+    AccountSize {
+        #[clap(short, long)]
+        verbose: Option&lt;bool&gt;,
+    },
+}
+
+#[tokio::main]
+async fn main() {
+    let args = Cli::parse();
+    let client = awsmetas3::client().await.unwrap();
+    match args.command {
+        Some(Commands::Buckets {}) =&gt; {
+            let buckets = awsmetas3::list_buckets(&amp;client).await.unwrap();
+            //print count of buckets
+            println!(&quot;Found {} buckets&quot;, buckets.len());
+            println!(&quot;Buckets: {:?}&quot;, buckets);
+        }
+        /*print total size of all buckets in human readable format
+        Use list_bucket_sizes to get a list of all buckets in an AWS S3 account
+        */
+        Some(Commands::AccountSize { verbose }) =&gt; {
+            let bucket_sizes = awsmetas3::list_bucket_sizes(&amp;client, verbose)
+                .await
+                .unwrap();
+            let total_size: i64 = bucket_sizes.iter().sum();
+            println!(
+                &quot;Total size of all buckets is {}&quot;,
+                format_size(total_size as u64, DECIMAL)
+            );
+        }
+        None =&gt; println!(&quot;No command specified&quot;),
+    }
+})</code></pre></pre>
+<p><code>Cargo.toml</code> <a href="https://github.com/nogibjj/rust-mlops-template/blob/main/awsmetas3/Cargo.toml">direct link</a></p>
+<pre><code class="language-toml">[package]
+name = &quot;awsmetas3&quot;
+version = &quot;0.1.0&quot;
+edition = &quot;2021&quot;
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+aws-config = &quot;0.52.0&quot;
+aws-sdk-s3 = &quot;0.22.0&quot;
+tokio = { version = &quot;1&quot;, features = [&quot;full&quot;] }
+clap = {version=&quot;4.0.32&quot;, features=[&quot;derive&quot;]}
+humansize = &quot;2.0.0&quot;
+</code></pre>
 <h4 id="related-videos-1"><a class="header" href="#related-videos-1">Related videos</a></h4>
 <ul>
 <li><a href="https://learning.oreilly.com/videos/52-weeks-of/080232022VIDEOPAIML/080232022VIDEOPAIML-c1_s17/">Install Rust Cloud9</a></li>
