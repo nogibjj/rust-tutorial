@@ -173,7 +173,7 @@ fn main() {
 ```
 
 
-##### Other References
+##### References
 
 * [Cargo Book](https://doc.rust-lang.org/cargo/)
 * [The Rust Programming Language Official Tutorial](https://doc.rust-lang.org/book/)
