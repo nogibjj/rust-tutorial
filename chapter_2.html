@@ -185,9 +185,105 @@
 </ul>
 <h2 id="part-3-using-aws-cloud-and-azure-cloud-with-sdk"><a class="header" href="#part-3-using-aws-cloud-and-azure-cloud-with-sdk">Part 3: Using AWS Cloud and Azure Cloud with SDK</a></h2>
 <h3 id="demo-1"><a class="header" href="#demo-1">Demo</a></h3>
+<h4 id="aws-lambda-rust-marco-polo"><a class="header" href="#aws-lambda-rust-marco-polo">AWS Lambda Rust Marco Polo</a></h4>
 <ul>
-<li>AWS Lambda Build and Deploy with Rust</li>
-<li>AWS S3 Account Summarizer with Rust</li>
+<li><a href="https://www.youtube.com/watch?v=jUTiHUTfGYo">AWS Lambda Build and Deploy with Rust-Direct Link</a></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jUTiHUTfGYo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<ul>
+<li><a href="https://github.com/nogibjj/rust-mlops-template/tree/main/marco-polo-lambda">Source for Marco Polo Rust Lambda</a></li>
+</ul>
+<p><code>main.rs</code> <a href="https://github.com/nogibjj/rust-mlops-template/blob/main/marco-polo-lambda/src/main.rs">direct link</a>.</p>
+<pre><pre class="playground"><code class="language-rust">use lambda_runtime::{run, service_fn, Error, LambdaEvent};
+use serde::{Deserialize, Serialize};
+
+#[derive(Deserialize)]
+struct Request {
+    name: String,
+}
+
+#[derive(Serialize)]
+struct Response {
+    req_id: String,
+    msg: String,
+}
+
+async fn function_handler(event: LambdaEvent&lt;Request&gt;) -&gt; Result&lt;Response, Error&gt; {
+    // Extract some useful info from the request
+    let name = event.payload.name;
+    let logic = match name.as_str() {
+        &quot;Marco&quot; =&gt; &quot;Polo&quot;,
+        _ =&gt; &quot;Who?&quot;,
+    };
+
+    // Prepare the response
+    let resp = Response {
+        req_id: event.context.request_id,
+        msg: format!(&quot;{} says {}&quot;, name, logic),
+    };
+
+    // Return `Response` (it will be serialized to JSON automatically by the runtime)
+    Ok(resp)
+}
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Error&gt; {
+    tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::INFO)
+        // disable printing the name of the module in every log line.
+        .with_target(false)
+        // disabling time is handy because CloudWatch will add the ingestion time.
+        .without_time()
+        .init();
+
+    run(service_fn(function_handler)).await
+}
+</code></pre></pre>
+<p><code>Cargo.toml</code> <a href="https://github.com/nogibjj/rust-mlops-template/blob/main/marco-polo-lambda/Cargo.toml">direct link</a></p>
+<pre><code class="language-toml">[package]
+name = &quot;marco-polo-lambda&quot;
+version = &quot;0.1.0&quot;
+edition = &quot;2021&quot;
+
+# Starting in Rust 1.62 you can use `cargo add` to add dependencies 
+# to your project.
+#
+# If you're using an older Rust version,
+# download cargo-edit(https://github.com/killercup/cargo-edit#installation) 
+# to install the `add` subcommand.
+#
+# Running `cargo add DEPENDENCY_NAME` will
+# add the latest version of a dependency to the list,
+# and it will keep the alphabetic ordering for you.
+
+[dependencies]
+
+lambda_runtime = &quot;0.7&quot;
+serde = &quot;1.0.136&quot;
+tokio = { version = &quot;1&quot;, features = [&quot;macros&quot;] }
+tracing = { version = &quot;0.1&quot;, features = [&quot;log&quot;] }
+tracing-subscriber = { version = &quot;0.3&quot;, default-features = false, features = [&quot;fmt&quot;] }
+</code></pre>
+<h5 id="steps-to-run"><a class="header" href="#steps-to-run">Steps to run</a></h5>
+<ul>
+<li><code>make format</code> to format code</li>
+<li><code>make lint</code> to lint</li>
+<li><code>make release-arm</code> to build for arm which is: <code>cargo lambda build --release --arm64</code></li>
+<li><code>make deploy</code> which is this<code>cargo lambda deploy</code></li>
+</ul>
+<pre><code class="language-Working demo">(.venv) @noahgift ➜ /workspaces/rust-mlops-template/marco-polo-lambda (main) $ make invoke
+cargo lambda invoke --remote \
+                --data-ascii '{&quot;name&quot;: &quot;Marco&quot;}' \
+                --output-format json \
+                marco-polo-lambda
+{
+  &quot;msg&quot;: &quot;Marco says Polo&quot;,
+  &quot;req_id&quot;: &quot;abc67e2b-a3aa-47fa-98fb-d07eb627577e&quot;
+}
+</code></pre>
+<h4 id="aws-s3-account-summarizer-with-rust"><a class="header" href="#aws-s3-account-summarizer-with-rust">AWS S3 Account Summarizer with Rust</a></h4>
+<ul>
+<li><a href="https://github.com/nogibjj/rust-mlops-template/tree/main/awsmetas3">Source code for AWS S3 Summarizer</a></li>
 </ul>
 <h4 id="related-videos-1"><a class="header" href="#related-videos-1">Related videos</a></h4>
 <ul>
