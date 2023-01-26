@@ -1,4 +1,4 @@
-# Chapter 1-Week 1
+# Chapter 1-Week 1 (Getting Started With Rust for Cloud, Data and MLOps)
 
 *(btw, yes, I made this image using Rust)*
 ![sd_final (1)](https://user-images.githubusercontent.com/58792/213264730-91ea442f-ec3d-4af2-9975-500c0d9ac7d0.png)

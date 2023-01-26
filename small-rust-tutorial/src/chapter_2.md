@@ -1,4 +1,4 @@
-# Chapter 2-Week 2
+# Chapter 2-Week 2 (Up and Running with Cloud Computing)
 
 Goal:  Up and running with Cloud Computing technology
 
