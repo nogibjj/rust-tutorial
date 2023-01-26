@@ -180,4 +180,4 @@ fn main() {
 * [Comprehensive Rust Google Tutorial](https://google.github.io/comprehensive-rust/)
 * [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
 * [Command-Line Rust](https://www.oreilly.com/library/view/command-line-rust/9781098109424/)
-
+* [Switching to Rust from Python (Live Rough Draft Series)](https://learning.oreilly.com/videos/switching-to-rust/01252023VIDEOPAIML/)

@@ -15,6 +15,11 @@ Goal:  Up and running with Cloud Computing technology
 
 * Demo console, cli, sdk
 
+[Setup Rust in AWS Cloud 9 Direct Link](https://www.youtube.com/watch?v=R8JnZ4sY4ks)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R8JnZ4sY4ks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 #### Related videos
 
 * [Install Rust Cloud9](https://learning.oreilly.com/videos/52-weeks-of/080232022VIDEOPAIML/080232022VIDEOPAIML-c1_s17/)
