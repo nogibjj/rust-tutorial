@@ -11,3 +11,5 @@ The secondary resources are this "live JIT (Just in Time) [book on Rust](https:/
 Try to code almost every single day for at least one hour.  Use [GitHub Copilot](https://github.com/features/copilot) + continuous integration tools (Format/Lint/Compile/Test/Run) to understand how to build and deploy working software.  The more cycles of building code while using these tools, the better you will get at real-world software engineering.  There is no substitute for daily practice; you must code every day or almost every day.
 
 It would be best if you also coded using the toolchain of modern tools that build quality software since jobs in the real world do care about code quality.  Suppose you are not using automated quality control tools like formatting and linting locally and in the build system automatically to deploy binaries or microservices. In that case, you won't learn how to engage as a professional software engineer fully.
+
+![1675083998474](https://user-images.githubusercontent.com/58792/215491434-d7449c53-bd96-4858-b9bd-97c1aab69de2.jpeg)
