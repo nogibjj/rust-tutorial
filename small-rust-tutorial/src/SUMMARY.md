@@ -7,4 +7,5 @@
 - [Chapter 3-Week 3-Virtualization and Containers](./chapter_3.md)
 - [Frequently Asked Questions](./faq.md)
 - [Projects](./projects.md)
+- [Guest Lecturers](./guest_lectures.md)
 
