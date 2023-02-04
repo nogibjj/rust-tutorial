@@ -141,6 +141,9 @@ Deployed to AWS App Runner via ECR
 3. push to ECR
 4. Tell AWS App Runner to autodeploy
 
+* [Direct link to video](https://www.youtube.com/watch?v=I3cEQ_7aD1A)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I3cEQ_7aD1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 
