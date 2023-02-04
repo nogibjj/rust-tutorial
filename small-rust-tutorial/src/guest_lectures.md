@@ -21,6 +21,7 @@
 * Topic: Rust for AWS Lambda
 * Date: TBD
 * GitHub:  [https://github.com/maxday](https://github.com/maxday)
+* YouTube: [https://www.youtube.com/@maxday_coding](https://www.youtube.com/@maxday_coding)
 * [Key Talk YouTube Video-Live Stream Discussion Using Rust](https://youtube.com/live/IZclXw4c3Vc)
 * [Podcast](https://podcast.paiml.com/episodes/maxime-david-serverless-with-rust)
 * [Enterprise MLOps Interviews](https://learning.oreilly.com/videos/enterprise-mlops-interviews/08012022VIDEOPAIML/)
