@@ -7,6 +7,12 @@
 * Date:  02/01/2023
 * [https://www.linkedin.com/in/derek-wales/](https://www.linkedin.com/in/derek-wales/)
 
+### Resources: 
+
+* [Slides on Virtualization](https://docs.google.com/presentation/d/1Y0sD-RQkeGQy3BwHOKOVj9KzQ4KqtlgA/edit?usp=share_link&ouid=114367115509726512575&rtpof=true&sd=true)
+* [Docker Walkthrough Scripts](https://docs.google.com/document/d/1uY227Fq1fZeQtyqc1x5Ecjym2Jx4Wa8M/edit?usp=sharing&ouid=114367115509726512575&rtpof=true&sd=true)
+
+
 ## Thomas Dohmke
 
 * Title:  CEO GitHub
