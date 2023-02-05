@@ -32,6 +32,9 @@
 * [Podcast](https://podcast.paiml.com/episodes/maxime-david-serverless-with-rust)
 * [Enterprise MLOps Interviews](https://learning.oreilly.com/videos/enterprise-mlops-interviews/08012022VIDEOPAIML/)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IZclXw4c3Vc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 ## Alfredo Deza
 
 * Title:  Author, Olympian, Adjunct Professor at Duke, Senior Cloud Advocate @Microsoft
