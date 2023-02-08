@@ -10,4 +10,4 @@
 - [Frequently Asked Questions](./faq.md)
 - [Projects](./projects.md)
 - [Guest Lecturers](./guest_lectures.md)
-- [sustainability](./sustainability.md)
+- [Sustainability](./sustainability.md)
