@@ -25,7 +25,7 @@
 
 * Title:  Software Engineering @DataDog
 * Topic: Rust for AWS Lambda
-* Date: TBD
+* Date: 3/01
 * GitHub:  [https://github.com/maxday](https://github.com/maxday)
 * YouTube: [https://www.youtube.com/@maxday_coding](https://www.youtube.com/@maxday_coding)
 * [Key Talk YouTube Video-Live Stream Discussion Using Rust](https://youtube.com/live/IZclXw4c3Vc)
@@ -46,4 +46,4 @@
 
 * Title:  O'Reilly Author Command-Line Rust
 * [Buy Book-Command-Line Rust](https://www.amazon.com/Command-Line-Rust-Project-Based-Primer-Writing/dp/1098109430)
-* Date: TBD
+* Date: Feb. 15th
