@@ -47,3 +47,6 @@
 * Title:  O'Reilly Author Command-Line Rust
 * [Buy Book-Command-Line Rust](https://www.amazon.com/Command-Line-Rust-Project-Based-Primer-Writing/dp/1098109430)
 * Date: Feb. 15th
+* Additional Links:
+    * [clap_v4 branch of book code](https://github.com/kyclark/command-line-rust/tree/clap_v4)
+    * [clap_v4 derive pattern of book code](https://github.com/kyclark/command-line-rust/tree/clap_v4_derive)
