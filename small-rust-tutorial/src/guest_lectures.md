@@ -38,8 +38,8 @@
 ## Alfredo Deza
 
 * Title:  Author, Olympian, Adjunct Professor at Duke, Senior Cloud Advocate @Microsoft
-* Topic: Rust with ONNX, Azure, OpenAI
-* Date: TBD
+* Topic: Rust with ONNX, Azure, OpenAI, Binary Deploy via GitHub Actions
+* Date: 3/15, at 5pm 
 * Linkedin: [https://www.linkedin.com/in/alfredodeza/](https://www.linkedin.com/in/alfredodeza/)
 
 ## Ken Youens-Clark
@@ -50,3 +50,9 @@
 * Additional Links:
     * [clap_v4 branch of book code](https://github.com/kyclark/command-line-rust/tree/clap_v4)
     * [clap_v4 derive pattern of book code](https://github.com/kyclark/command-line-rust/tree/clap_v4_derive)
+
+## Brian Tarbox
+
+* Linkedin: [https://www.linkedin.com/in/briantarbox/](https://www.linkedin.com/in/briantarbox/)
+* Date: TBD
+* AWS Lambda for Alexa Guru
