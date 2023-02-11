@@ -16,6 +16,9 @@ lint:
 test:
 	cargo test --quiet
 
+linkcheck:
+	mdbook test -L small-rust-tutorial
+
 run:
 	cargo run
 

@@ -30,7 +30,7 @@
    Start with this example code: [rust-rdkafka](https://github.com/fede1024/rust-rdkafka)
 
 6. Development of a cloud-based serverless application using Rust and the OpenFaaS framework. 
-   Start with this example code: [faas-rust](https://github.com/openfaas/faas-rust)
+   Start with this example code: [faas-rust](https://github.com/openfaas)
 
 7. Design and implementation of a cloud-based IoT solution using Rust and the MQTT protocol. 
    Start with this example code: [paho.mqtt.rust](https://github.com/eclipse/paho.mqtt.rust)
