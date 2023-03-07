@@ -147,11 +147,37 @@
                         <h1 id="chapter-8-more-serverless"><a class="header" href="#chapter-8-more-serverless">Chapter 8-More Serverless</a></h1>
 <h2 id="hour-1--rust-with-azure-functions"><a class="header" href="#hour-1--rust-with-azure-functions">Hour 1:  Rust with Azure Functions</a></h2>
 <ul>
-<li>Guest Lecture Alfredo Deza</li>
+<li>Guest Lecture <a href="https://www.linkedin.com/in/alfredodeza/">Alfredo Deza</a></li>
 <li><a href="https://learning.oreilly.com/videos/deploy-rust-on/27965683VIDEOPAIML/">Deploy Rust on Azure Functions</a></li>
 </ul>
-<h2 id="step-functions-with-rust"><a class="header" href="#step-functions-with-rust">Step Functions with Rust</a></h2>
+<h2 id="hour2-step-functions-with-rust"><a class="header" href="#hour2-step-functions-with-rust">Hour2: Step Functions with Rust</a></h2>
+<p>Marco, Polo Rust Step Function</p>
+<p>Code here:  https://github.com/nogibjj/rust-mlops-template/blob/main/step-functions-rust/README.md</p>
+<ul>
+<li>create new marco polo lambda
+<code>cargo lambda new rust-marco</code></li>
+</ul>
+<p>Then build, deploy and invoke: <code>make release</code> <code>make deploy</code> and <code>make invoke</code>:</p>
+<pre><code class="language-bash">(.venv) @noahgift ➜ /workspaces/rust-mlops-template/step-functions-rust/rust-marco (main) $ make invoke
+cargo lambda invoke --remote \
+                --data-ascii '{&quot;name&quot;: &quot;Marco&quot;}' \
+                --output-format json \
+                rust-marco
+{
+  &quot;payload&quot;: &quot;Polo&quot;,
+  &quot;req_id&quot;: &quot;20de1794-1055-4731-9488-7c9217ad195d&quot;
+}
+</code></pre>
+<ul>
+<li>create new rust polo lambda
+<code>cargo lambda new rust-polo</code></li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/58792/223496628-e6e6e221-68e4-4930-b1bd-001ebbbb4235.png" alt="Screenshot 2023-03-07 at 12 06 12 PM" /></p>
+<p><img src="https://user-images.githubusercontent.com/58792/223496705-08ead2cb-70a0-47da-8fad-e558c3769217.png" alt="Screenshot 2023-03-07 at 12 08 48 PM" /></p>
 <h2 id="gcp-cloud-functions"><a class="header" href="#gcp-cloud-functions">GCP Cloud Functions</a></h2>
+<ul>
+<li><a href="https://learning.oreilly.com/videos/google-professional-cloud/03032022VIDEOPAIML/03032022VIDEOPAIML-c1_s12/">Using Gcp Cloud Functions</a></li>
+</ul>
 
                     </main>
 
