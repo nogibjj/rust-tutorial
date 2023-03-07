@@ -71,10 +71,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -82,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="learn_rust_tips.html"><strong aria-hidden="true">1.</strong> Learning Rust Tips</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> Preface</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Chapter 1-Getting Started with Rust</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">4.</strong> Chapter 2-Getting Started with Cloud Computing</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">5.</strong> Chapter 3-Week 3-Virtualization and Containers</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">6.</strong> Chapter 4-Week 4-Containerized-Rust</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">7.</strong> Chapter 5-Week 5-Distributed Computing and Concurrency with Rust</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">8.</strong> Chapter 6-Week6-Distributed Computing</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">9.</strong> Chapter 7-Week7-Serverless</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">10.</strong> Frequently Asked Questions</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">11.</strong> Projects</a></li><li class="chapter-item expanded "><a href="guest_lectures.html"><strong aria-hidden="true">12.</strong> Guest Lecturers</a></li><li class="chapter-item expanded "><a href="sustainability.html"><strong aria-hidden="true">13.</strong> Sustainability</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="learn_rust_tips.html"><strong aria-hidden="true">1.</strong> Learning Rust Tips</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> Preface</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Chapter 1-Getting Started with Rust</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">4.</strong> Chapter 2-Getting Started with Cloud Computing</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">5.</strong> Chapter 3-Week 3-Virtualization and Containers</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">6.</strong> Chapter 4-Week 4-Containerized-Rust</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">7.</strong> Chapter 5-Week 5-Distributed Computing and Concurrency with Rust</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">8.</strong> Chapter 6-Week6-Distributed Computing</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">9.</strong> Chapter 7-Week7-Serverless</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">10.</strong> Chapter 8-Week8-Serverless</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">11.</strong> Frequently Asked Questions</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">12.</strong> Projects</a></li><li class="chapter-item expanded "><a href="guest_lectures.html"><strong aria-hidden="true">13.</strong> Guest Lecturers</a></li><li class="chapter-item expanded "><a href="sustainability.html"><strong aria-hidden="true">14.</strong> Sustainability</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -887,6 +889,14 @@ async fn main() -&gt; std::io::Result&lt;()&gt; {
 <ul>
 <li><a href="https://docs.google.com/presentation/d/1eoFYJWrD6oTnRP8n5gKkhRP6HvTPpCPKESUWDJpmZ1c/edit#slide=id.g213a871c055_0_0">Slides on Rust for AWS Lambda</a></li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-8-more-serverless"><a class="header" href="#chapter-8-more-serverless">Chapter 8-More Serverless</a></h1>
+<h2 id="hour-1--rust-with-azure-functions"><a class="header" href="#hour-1--rust-with-azure-functions">Hour 1:  Rust with Azure Functions</a></h2>
+<ul>
+<li>Guest Lecture Alfredo Deza</li>
+<li><a href="https://learning.oreilly.com/videos/deploy-rust-on/27965683VIDEOPAIML/">Deploy Rust on Azure Functions</a></li>
+</ul>
+<h2 id="step-functions-with-rust"><a class="header" href="#step-functions-with-rust">Step Functions with Rust</a></h2>
+<h2 id="gcp-cloud-functions"><a class="header" href="#gcp-cloud-functions">GCP Cloud Functions</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
 <h2 id="there-are-two-many-resources-what-should-i-use"><a class="header" href="#there-are-two-many-resources-what-should-i-use">There are two many resources; what should I use?</a></h2>
 <p>The primary resource for this course is <a href="https://www.coursera.org/specializations/building-cloud-computing-solutions-at-scale">Building Cloud Computing Solutions at Scale Specialization</a>, and it extensively covers the most important concepts.  You can work through this course as you attend class.</p>
