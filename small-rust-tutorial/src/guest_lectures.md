@@ -31,6 +31,7 @@
 * [Key Talk YouTube Video-Live Stream Discussion Using Rust](https://youtube.com/live/IZclXw4c3Vc)
 * [Podcast](https://podcast.paiml.com/episodes/maxime-david-serverless-with-rust)
 * [Enterprise MLOps Interviews](https://learning.oreilly.com/videos/enterprise-mlops-interviews/08012022VIDEOPAIML/)
+* [Slides on Rust for AWS Lambda](https://docs.google.com/presentation/d/1eoFYJWrD6oTnRP8n5gKkhRP6HvTPpCPKESUWDJpmZ1c/edit#slide=id.g213a871c055_0_0)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IZclXw4c3Vc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -39,7 +40,7 @@
 
 * Title:  Author, Olympian, Adjunct Professor at Duke, Senior Cloud Advocate @Microsoft
 * Topic: Rust with ONNX, Azure, OpenAI, Binary Deploy via GitHub Actions
-* Date: 3/15, at 5pm 
+* Date: Week of 3/22-24, at 5pm 
 * Linkedin: [https://www.linkedin.com/in/alfredodeza/](https://www.linkedin.com/in/alfredodeza/)
 
 ## Ken Youens-Clark

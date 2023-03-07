@@ -9,6 +9,7 @@
 - [Chapter 5-Week 5-Distributed Computing and Concurrency with Rust](./chapter_5.md)
 - [Chapter 6-Week6-Distributed Computing](./chapter_6.md)
 - [Chapter 7-Week7-Serverless](./chapter_7.md)
+- [Chapter 8-Week8-Serverless](./chapter_8.md)
 - [Frequently Asked Questions](./faq.md)
 - [Projects](./projects.md)
 - [Guest Lecturers](./guest_lectures.md)

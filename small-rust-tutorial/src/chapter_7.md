@@ -15,3 +15,9 @@
 ![pythonvsrust1](https://user-images.githubusercontent.com/58792/218091288-6819ceb2-ff10-460b-8996-ee0cb71246e9.png)
 ![pythonvsrust2](https://user-images.githubusercontent.com/58792/218091299-10b9621c-2754-4eed-b912-fa14cd848650.png)
 
+
+### Part 2:  Guest 	Maxime DAVID
+
+[Maxime DAVID](https://www.linkedin.com/in/maxday/)
+
+* [Slides on Rust for AWS Lambda](https://docs.google.com/presentation/d/1eoFYJWrD6oTnRP8n5gKkhRP6HvTPpCPKESUWDJpmZ1c/edit#slide=id.g213a871c055_0_0)
