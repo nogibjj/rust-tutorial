@@ -52,6 +52,18 @@
     * [clap_v4 branch of book code](https://github.com/kyclark/command-line-rust/tree/clap_v4)
     * [clap_v4 derive pattern of book code](https://github.com/kyclark/command-line-rust/tree/clap_v4_derive)
 
+## Denny Lee
+
+* Sr. Staff Developer Advocate @Databricks
+* [Linkedin](https://www.linkedin.com/in/dennyglee/)
+* Date: April, 5th @4pm.
+
+## Matthew Powers
+
+* Developer Advocate @Databricks
+* [Linked](https://www.linkedin.com/in/matthew-powers-cfa-6246525/)
+* Date: April, 5th @5pm.
+
 ## Brian Tarbox
 
 * Linkedin: [https://www.linkedin.com/in/briantarbox/](https://www.linkedin.com/in/briantarbox/)
