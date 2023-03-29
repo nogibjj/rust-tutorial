@@ -960,6 +960,168 @@ Here is an example of a <code>cmd.sh</code></p>
 ## Prompt:  ?? delete all rust build directories to save space
 ## CMD: find . -name &quot;target&quot; -type d -exec rm -rf {} \;
 </code></pre>
+<h2 id="mini-lecture-b--building-chat-bot-with-openai-while-using-chatgpt4-as-an-ai-pair-programming-assistant"><a class="header" href="#mini-lecture-b--building-chat-bot-with-openai-while-using-chatgpt4-as-an-ai-pair-programming-assistant">Mini-Lecture B:  Building Chat Bot with OpenAI while Using ChatGPT4 as an AI Pair Programming Assistant</a></h2>
+<p>In this innovative project, we demonstrate the power of AI-driven pair programming tools, such as ChatGPT-4, OpenAI, and GitHub Copilot, by creating a fully-functional chatbot using the Rust programming language. The chatbot connects to the OpenAI API to provide intelligent, dynamic responses to user input. Throughout the development process, ChatGPT-4 assists with code refactoring and optimization, resulting in a high-quality, production-ready chatbot. This project showcases the remarkable capabilities of AI in augmenting human programming skills and improving code quality.</p>
+<p>Here's the output of the tree command, displaying the project structure:</p>
+<pre><code class="language-bash">.
+├── Cargo.lock
+├── Cargo.toml
+├── src
+│   ├── chatbot.rs
+│   ├── lib.rs
+│   └── main.rs
+└── tests
+    └── test.rs
+
+</code></pre>
+<p>This project consists of the following main components:</p>
+<ul>
+<li><code>Cargo.lock</code> and <code>Cargo.toml</code>: Rust's package manager files containing dependencies and metadata.</li>
+<li><code>src</code>: The source code directory containing the main application and library files.
+<ul>
+<li><code>chatbot.rs</code>: The file containing the chatbot logic, including functions for user input, API calls, and AI response handling.</li>
+<li><code>lib.rs</code>: The file exposing the chatbot module and its contents, as well as the chat loop function.</li>
+<li><code>main.rs</code>: The main entry point of the application, initializing the environment and invoking the chat loop function.</li>
+</ul>
+</li>
+<li><code>tests</code>: The directory containing test files.
+<ul>
+<li><code>test.rs</code>: The file with test cases for the chatbot functions.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.youtube.com/live/rBhMUAlC9TM?feature=share">Watch Live Coding a Chatbot with Rust and OpenAI</a></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rBhMUAlC9TM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<ul>
+<li><a href="https://github.com/nogibjj/assimilate-openai/tree/main/chatbot">Code here</a></li>
+</ul>
+<p><code>main.rs</code></p>
+<pre><pre class="playground"><code class="language-rust">use chatbot::chatbot::run_chat_loop;
+use reqwest::Client;
+
+use std::env;
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), reqwest::Error&gt; {
+    let client = Client::new();
+
+    // Use env variable OPENAI_API_KEY
+    let api_key = env::var(&quot;OPENAI_API_KEY&quot;).expect(&quot;OPENAI_API_KEY must be set&quot;);
+    let url = &quot;https://api.openai.com/v1/completions&quot;;
+
+    run_chat_loop(&amp;client, &amp;api_key, url).await?;
+
+    Ok(())
+}</code></pre></pre>
+<p><code>lib.rs</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub mod chatbot;
+<span class="boring">}</span></code></pre></pre>
+<p><code>chatbot.rs</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use reqwest::{header, Client};
+use serde_json::json;
+use serde_json::Value;
+use std::io;
+use std::io::Write;
+
+pub async fn run_chat_loop(
+    client: &amp;Client,
+    api_key: &amp;str,
+    url: &amp;str,
+) -&gt; Result&lt;(), reqwest::Error&gt; {
+    let mut conversation = String::from(&quot;The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n&quot;);
+
+    loop {
+        print!(&quot;Human: &quot;);
+        io::stdout().flush().unwrap();
+
+        let user_input = read_user_input();
+
+        if user_input.to_lowercase() == &quot;quit&quot; || user_input.to_lowercase() == &quot;exit&quot; {
+            break;
+        }
+
+        conversation.push_str(&quot;Human: &quot;);
+        conversation.push_str(&amp;user_input);
+        conversation.push_str(&quot;\nAI: &quot;);
+
+        let json = json!({
+            &quot;model&quot;: &quot;text-davinci-003&quot;,
+            &quot;prompt&quot;: conversation,
+            &quot;temperature&quot;: 0.9,
+            &quot;max_tokens&quot;: 150,
+            &quot;top_p&quot;: 1.0,
+            &quot;frequency_penalty&quot;: 0.0,
+            &quot;presence_penalty&quot;: 0.6,
+            &quot;stop&quot;: [&quot; Human:&quot;, &quot; AI:&quot;]
+        });
+
+        let body = call_api(client, api_key, url, json).await?;
+        let ai_response = get_ai_response(&amp;body);
+
+        println!(&quot;AI: {}&quot;, ai_response);
+
+        conversation.push_str(ai_response);
+        conversation.push('\n');
+    }
+
+    Ok(())
+}
+
+pub async fn call_api(
+    client: &amp;Client,
+    api_key: &amp;str,
+    url: &amp;str,
+    json: serde_json::Value,
+) -&gt; Result&lt;Value, reqwest::Error&gt; {
+    let response = client
+        .post(url)
+        .header(header::AUTHORIZATION, format!(&quot;Bearer {}&quot;, api_key))
+        .header(header::CONTENT_TYPE, &quot;application/json&quot;)
+        .json(&amp;json)
+        .send()
+        .await?;
+
+    let body: Value = response.json().await?;
+    Ok(body)
+}
+
+pub fn get_ai_response(body: &amp;Value) -&gt; &amp;str {
+    body[&quot;choices&quot;][0][&quot;text&quot;].as_str().unwrap().trim()
+}
+
+pub fn read_user_input() -&gt; String {
+    let mut user_input = String::new();
+    io::stdin().read_line(&amp;mut user_input).unwrap();
+    user_input.trim().to_string()
+}
+
+<span class="boring">}</span></code></pre></pre>
+<p><code>tests/test.rs</code></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use chatbot::chatbot::get_ai_response;
+use serde_json::json;
+
+#[test]
+fn test_get_ai_response() {
+    let body = json!({
+        &quot;choices&quot;: [
+            {
+                &quot;text&quot;: &quot; Hello! How can I help you today?\n&quot;
+            }
+        ]
+    });
+
+    let response = get_ai_response(&amp;body);
+    assert_eq!(response, &quot;Hello! How can I help you today?&quot;);
+}
+<span class="boring">}</span></code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
 <h2 id="there-are-two-many-resources-what-should-i-use"><a class="header" href="#there-are-two-many-resources-what-should-i-use">There are two many resources; what should I use?</a></h2>
 <p>The primary resource for this course is <a href="https://www.coursera.org/specializations/building-cloud-computing-solutions-at-scale">Building Cloud Computing Solutions at Scale Specialization</a>, and it extensively covers the most important concepts.  You can work through this course as you attend class.</p>
