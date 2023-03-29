@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="learn_rust_tips.html"><strong aria-hidden="true">1.</strong> Learning Rust Tips</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> Preface</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Chapter 1-Getting Started with Rust</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">4.</strong> Chapter 2-Getting Started with Cloud Computing</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">5.</strong> Chapter 3-Week 3-Virtualization and Containers</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">6.</strong> Chapter 4-Week 4-Containerized-Rust</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">7.</strong> Chapter 5-Week 5-Distributed Computing and Concurrency with Rust</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">8.</strong> Chapter 6-Week6-Distributed Computing</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">9.</strong> Chapter 7-Week7-Serverless</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">10.</strong> Chapter 8-Week8-Serverless</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">11.</strong> Frequently Asked Questions</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">12.</strong> Projects</a></li><li class="chapter-item expanded "><a href="guest_lectures.html"><strong aria-hidden="true">13.</strong> Guest Lecturers</a></li><li class="chapter-item expanded "><a href="sustainability.html"><strong aria-hidden="true">14.</strong> Sustainability</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="learn_rust_tips.html"><strong aria-hidden="true">1.</strong> Learning Rust Tips</a></li><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">2.</strong> Preface</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Chapter 1-Getting Started with Rust</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">4.</strong> Chapter 2-Getting Started with Cloud Computing</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">5.</strong> Chapter 3-Week 3-Virtualization and Containers</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">6.</strong> Chapter 4-Week 4-Containerized-Rust</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">7.</strong> Chapter 5-Week 5-Distributed Computing and Concurrency with Rust</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">8.</strong> Chapter 6-Week6-Distributed Computing</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">9.</strong> Chapter 7-Week7-Serverless</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">10.</strong> Chapter 8-Week8-Serverless</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">11.</strong> Chapter 9-AI Assisted Coding & Big Data Systems</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">12.</strong> Frequently Asked Questions</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">13.</strong> Projects</a></li><li class="chapter-item expanded "><a href="guest_lectures.html"><strong aria-hidden="true">14.</strong> Guest Lecturers</a></li><li class="chapter-item expanded "><a href="sustainability.html"><strong aria-hidden="true">15.</strong> Sustainability</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -925,6 +925,41 @@ cargo lambda invoke --remote \
 <ul>
 <li><a href="https://learning.oreilly.com/videos/google-professional-cloud/03032022VIDEOPAIML/03032022VIDEOPAIML-c1_s12/">Using Gcp Cloud Functions</a></li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-9--ai-pair-assisted-programming-and-big-data-storage"><a class="header" href="#chapter-9--ai-pair-assisted-programming-and-big-data-storage">Chapter 9:  AI Pair Assisted Programming and Big Data Storage</a></h1>
+<h2 id="mini-lecture-a--using-github-copilot-cli"><a class="header" href="#mini-lecture-a--using-github-copilot-cli">Mini-Lecture A:  Using GitHub Copilot CLI</a></h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/@githubnext/github-copilot-cli">github-copilot-cli</a></li>
+</ul>
+<p>tldr: these are the commands</p>
+<pre><code class="language-bash">#!/usr/bin/env bash
+
+#some setup stuff for the dev environment
+#install nodejs
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &amp;&amp;\
+sudo apt-get install -y nodejs
+
+#install GitHub Copilot CLI
+npm install -g @githubnext/github-copilot-cli
+
+#authenticate with GitHub Copilot
+github-copilot-cli auth
+
+#Upgrade
+#npm install -g @githubnext/github-copilot-cli
+</code></pre>
+<ul>
+<li><a href="https://youtube.com/live/F67rjOjEQE4">Watch Copilot Video Link</a></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F67rjOjEQE4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>Suggestion:  Try out commands via <code>??</code> and put them into a <code>cmd.sh</code> so you can save both prompt and command
+Here is an example of a <code>cmd.sh</code></p>
+<pre><code class="language-bash">### GitHub Copilot Commands
+## Prompt: ?? find all large rust target folders and get size and location
+## CMD:  find . -name &quot;target&quot; -type d -exec du -sh {} \;
+
+## Prompt:  ?? delete all rust build directories to save space
+## CMD: find . -name &quot;target&quot; -type d -exec rm -rf {} \;
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
 <h2 id="there-are-two-many-resources-what-should-i-use"><a class="header" href="#there-are-two-many-resources-what-should-i-use">There are two many resources; what should I use?</a></h2>
 <p>The primary resource for this course is <a href="https://www.coursera.org/specializations/building-cloud-computing-solutions-at-scale">Building Cloud Computing Solutions at Scale Specialization</a>, and it extensively covers the most important concepts.  You can work through this course as you attend class.</p>
