@@ -10,6 +10,7 @@
 - [Chapter 6-Week6-Distributed Computing](./chapter_6.md)
 - [Chapter 7-Week7-Serverless](./chapter_7.md)
 - [Chapter 8-Week8-Serverless](./chapter_8.md)
+- [Chapter 9-AI Assisted Coding & Big Data Systems](./chapter_9.md)
 - [Frequently Asked Questions](./faq.md)
 - [Projects](./projects.md)
 - [Guest Lecturers](./guest_lectures.md)
