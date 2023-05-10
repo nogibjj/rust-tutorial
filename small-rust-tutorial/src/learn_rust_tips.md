@@ -1,5 +1,7 @@
 ## Tips on Learning Rust
 
+Note, you can learn Rust for MLOps by taking this Duke Coursera course here:  [DevOps, DataOps, MLOps](https://www.coursera.org/learn/devops-dataops-mlops-duke)
+
 ### Leveling Up with Rust via GitHub Copilot
 
 Use GitHub ecosystem to "LEVEL UP" to a more powerful language in Rust.
